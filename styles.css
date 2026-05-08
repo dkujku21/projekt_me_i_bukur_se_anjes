@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #0f172a;
+  color: #f1f5f9;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#game-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 1rem;
+  gap: 1rem;
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 420px;
+}
+
+.score-box {
+  background: #1e293b;
+  border: 0.5px solid #334155;
+  border-radius: 8px;
+  padding: 0.4rem 1.2rem;
+  text-align: center;
+}
+
+.score-label {
+  font-size: 11px;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.score-val {
+  font-size: 22px;
+  font-weight: 500;
+  color: #f1f5f9;
+}
+
+#canvas-wrap {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 0.5px solid #334155;
+  box-shadow: 0 0 0 4px #1e293b;
+}
+
+canvas {
+  display: block;
+}
+
+#overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: rgba(0, 0, 0, 0.60);
+  backdrop-filter: blur(3px);
+}
+
+#overlay h2 {
+  font-size: 28px;
+  font-weight: 500;
+  color: #ffffff;
+  text-align: center;
+}
+
+#overlay p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.65);
+  text-align: center;
+}
+
+#overlay button {
+  margin-top: 0.5rem;
+  padding: 0.6rem 2rem;
+  font-size: 15px;
+  font-weight: 500;
+  background: #4ade80;
+  color: #052e16;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+#overlay button:hover  { transform: scale(1.05); }
+#overlay button:active { transform: scale(0.97); }
+
+#controls {
+  display: grid;
+  grid-template-areas: ". up ." "left down right";
+  grid-template-columns: repeat(3, 56px);
+  gap: 6px;
+}
+
+.dpad {
+  width: 56px;
+  height: 56px;
+  background: #1e293b;
+  border: 0.5px solid #475569;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+  user-select: none;
+  transition: background 0.1s, transform 0.1s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.dpad:active {
+  background: #0f172a;
+  transform: scale(0.92);
+}
+
+#hint {
+  font-size: 12px;
+  color: #64748b;
+}
